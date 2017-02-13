@@ -1,0 +1,55 @@
+#!/bin/sh
+# EXP=`basename $PWD dir`
+EXP=01
+# SCRATCH=/esker_tmp1/$USER
+#SCRATCH=.
+#USER=$USER
+#
+#mkdir $SCRATCH/${EXP}dir
+#cd $SCRATCH/${EXP}dir
+#cp $SCRATCH/${EXP}dir/Setup/* .
+make
+expname=EXP$EXP
+mkdir -p $expname
+cp etc/bcmctr.f20 $expname/bcmctr
+cp etc/bcmin.f00  $expname/bcmin
+
+
+cd $expname
+mkdir -p out 
+
+cp ../data/co2ice_800.dat . 
+cp ../data/volco2.dat . 
+cp ../data/bcmir0 . 
+cp ../data/bcms01 . 
+cp ../data/bcms02 . 
+cp ../data/bcms2  . 
+
+
+cp ../bcm .  
+cp ../calot . 
+
+cp ../etc/calctr  . 
+cp ../etc/bcmctr.C15 bcmctr
+cp ../init/cal.start cal.dat
+
+cp ../init/cal7.start cal7.dat
+cp ../init/cal6.start cal6.dat
+cp ../init/cal5.start cal5.dat
+cp ../init/bcmfn . 
+cp ../init/bsim.d . 
+cp ../init/cal5.start cal5.dat
+
+time ./bcm > out/BLOG
+./calot
+
+while [ ! -f stop ]
+do
+  time ./bcm > out/BLOG
+  time ./calot > out/BLOG
+  cp bsim.d bsim.start
+done
+
+paste vol.dat vol5.dat vol6.dat vol7.dat | awk '{print $1,$2,$4,$6,$8,$9}' > out/vol_${EXP}.dat
+
+mv *.dat out 

@@ -1,0 +1,34 @@
+    2400  nts
+       0  iprint
+       T  season
+       T  ocen
+       F  ekm
+       F  tsclim
+       F  taclim
+       F  simpir
+       T  turbu
+       F  lgm18k
+       F  taiga
+       F  otter
+       T  summer
+       F  co2var
+       1. facco2
+       0. facsc
+c ...  nts    = number of time steps run in this program
+c     (nts    = 120  =>  1 an)
+c ...  iprint = 1 => program print every time step
+c ...  season =.true. => cycle saisonnier 
+c ...  ocen   =.true. => transports de chaleur oceanique 
+c ...  ekm    =.true. => parametrisation du courant d'ekman
+c ...  tsclim =.true. => forcage de l'atmosphere via la climatologie de t4
+c ...  taclim =.true. => forcage de la surface   via la climatologie de t2 et u4 
+c ...  simpir =.true. => retroaction temperature - extension glace continentale ou non
+c ...  turbu  =.true. => parametrisation du flux tourbillonnaire macroechelle ou non
+c ...  lgm18k =.true. => simulation dernier maximum glaciaire avec donnees de CLIMAP ou non
+c ...  taiga  =.true. => prise en compte taiga feedback ou non pour le climat present
+c ...  otter  =.true. => prise en compte taiga feedback d'Otterman ou non
+c ...             summer =.true. => taiga feedback base sur la temperature estivale ou non
+c      if (otter) summer =.true. 
+c ...  co2var =.false. => prise en compte variation CO2(Vostok) ou non
+c ...  facco2 = 1.       Simulation facco2 X CO2 ou non
+c ...  facsc  = 0.       Simulation  (1 + facsc/100) X 1368Wm-2 

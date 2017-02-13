@@ -1,0 +1,2 @@
+   1000     ! deltat (integration time of "calot")
+   0.00     ! standard deviation of additive stochastic term [not enabled in this version]
