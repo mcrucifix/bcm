@@ -12,9 +12,11 @@ Acknowledge the authors of the original publications publications
 
 # Running
 
+```
 ./configure
 make
 qsub
+```
 
 inspect qsub and see what it does ! 
 
@@ -22,8 +24,8 @@ inspect qsub and see what it does !
 
 ## Inititialisation files  [init]
 
-cal5,6,7.start : initial ice sheet profiles with 0.5d resolution
-cal.start : net accumulation - ablation balance over ice sheets with 5 degree resolution
+- cal5,6,7.start : initial ice sheet profiles with 0.5d resolution
+- cal.start : net accumulation - ablation balance over ice sheets with 5 degree resolution
 
 
 ## Configuration files  [etc]
@@ -39,9 +41,7 @@ cal.start : net accumulation - ablation balance over ice sheets with 5 degree re
 
 # source in [src] 
 
-[src/bcm.f] is the atmosphere model
-[src/cal.f] is the ice sheet model, runnig 1000 years (or see `calctr` to change this)
+(src/bcm.f)[src/bcm.f] is the atmosphere model
+(src/bcm.f)[src/cal.f] is the ice sheet model, runnig 1000 years (or see `calctr` to change this)
 
-Note: `bcm.f` includes the function `co2inter` for a possible inclusion of interactive CO2 as use in the master thesis of Maxime Antoine. Not used at the moment. 
-
-
+Note: (src/bcm.f)[bcm.f] includes the function `co2inter` for a possible inclusion of interactive CO2 as use in the master thesis of Maxime Antoine. Not used at the moment.
