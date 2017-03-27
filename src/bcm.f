@@ -135,7 +135,7 @@ c ... ipal : no du run
 c
        read(10,103) apal0
        apal = apal0
- 103   format(f8.3)
+ 103   format(f9.3)
        read(10,103) fpal0
        fpal = fpal0
 c ... apal : annee du cycle glacial (ky)
@@ -3617,7 +3617,7 @@ c
    93   format((f6.1,f12.2,f12.4,e12.4,4x,7e12.4))
         write(13,94)apal,ch(4),(accwri(j,   4),j=1,jp),
      .                   ((-1.)*ablwri(j,   4),j=1,jp)
-   94   format(f8.3,1x,a1,9e12.4,/,7x,9e12.4,
+   94   format(f9.3,1x,a1,9e12.4,/,7x,9e12.4,
      .        ' acc',2(/,7x,9e12.4),' abl')
 c
         do 96 iilw=5,nilw
@@ -3668,7 +3668,7 @@ c
 c ----------  pour exp. co2 de thierry   ------  debut   ---------------
 c co2      write(iwr7,50) apal,ppmgz2,ajmav(1),voliav
  50        format (3x,'moyennes annuelles',5x,'annee =',f6.2,5x,
-     .             'co2 =',f8.3,/,15x,
+     .             'co2 =',f9.3,/,15x,
      .             'ice surf. =',e12.4,3x,'ice vol. =',e12.4)
 c co2      write(iwr7,51) (t4msu1(j,2),j=1,jp)
 c co2      write(iwr7,52) (t4msu1(j,4),j=1,jp)

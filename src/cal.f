@@ -515,7 +515,7 @@ c
 c ... apal : annee du cycle glacial (ky)
 c
       read(9,103) fpal
- 103   format(f8.3)
+ 103   format(f9.3)
 c ... apal : annee de fin du run (utile pour calot uniquement) (ky)
        rewind 9
 c
@@ -550,17 +550,17 @@ c
 c1010 format(i5,9e12.4,/5x,9e12.4)
  1010 format(i5,2x,9e12.4,/,7x,9e12.4)
 
- 1008   format(f8.3,2x,9e12.4,/,7x,9e12.4,
+ 1008   format(f9.3,2x,9e12.4,/,7x,9e12.4,
      .        4x,2(/,7x,9e12.4),4x)
- 1009 format(f8.3,2f14.6)
+ 1009 format(f9.3,2f14.6)
  1011 format(1x,f5.2,8(1x,e10.4))
  1012 format(1x,f5.2,8(1x,e10.4))
  2011 format(1x,/,1x,/,1x)
- 2012 format(' calotte nr',i2,' annee',f8.3,
+ 2012 format(' calotte nr',i2,' annee',f9.3,
      &//,' lat   altitude   epaisseur  bed.'
      &'init.  bedrock    vitesse   % cont.    % glace   accumulation')
  3102   format(i12)
- 3103   format(f8.3)
+ 3103   format(f9.3)
  3104   format(l12)
        stop
        end
